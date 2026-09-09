@@ -1,0 +1,236 @@
+/* ==========================================================================
+   MINDSENSE — AI ANALYSIS PIPELINE STYLESHEET (analysis.css)
+   Pulsing Neural Core, Multi-Stage Pipeline Tracker, and Progress Animations
+   ========================================================================== */
+
+.analysis-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: radial-gradient(circle at 50% 20%, rgba(108, 92, 231, 0.08) 0%, rgba(247, 247, 251, 1) 75%);
+}
+
+.analysis-container {
+  flex: 1;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.analysis-header {
+  margin-bottom: 36px;
+}
+
+.analysis-header h1 {
+  font-size: 2.3rem;
+  margin-bottom: 8px;
+}
+
+.analysis-header p {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+}
+
+/* --- Animated Neural Core --- */
+.neural-core-wrapper {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  margin: 0 auto 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.neural-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px dashed rgba(108, 92, 231, 0.35);
+  animation: rotate-ring 14s linear infinite;
+}
+
+.neural-ring-1 {
+  width: 160px;
+  height: 160px;
+}
+
+.neural-ring-2 {
+  width: 120px;
+  height: 120px;
+  border-color: rgba(0, 206, 201, 0.4);
+  animation-duration: 8s;
+  animation-direction: reverse;
+}
+
+.neural-center-orb {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary) 0%, #8E44AD 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  box-shadow: 0 0 35px var(--primary-glow), inset 0 0 15px rgba(255, 255, 255, 0.4);
+  animation: orb-pulse 2.2s ease-in-out infinite;
+  z-index: 2;
+}
+
+.neural-center-orb svg {
+  width: 38px;
+  height: 38px;
+}
+
+@keyframes rotate-ring {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes orb-pulse {
+  0% { transform: scale(0.96); box-shadow: 0 0 25px var(--primary-glow); }
+  50% { transform: scale(1.06); box-shadow: 0 0 45px rgba(108, 92, 231, 0.45); }
+  100% { transform: scale(0.96); box-shadow: 0 0 25px var(--primary-glow); }
+}
+
+/* --- Progress Bar --- */
+.progress-card {
+  width: 100%;
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-md);
+  padding: 32px;
+  margin-bottom: 24px;
+}
+
+.progress-counter-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.progress-status-label {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--dark);
+}
+
+.progress-percent-val {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--primary);
+  font-family: var(--font-mono);
+}
+
+.pipeline-progress-track {
+  width: 100%;
+  height: 12px;
+  background: var(--bg-main);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  position: relative;
+}
+
+.pipeline-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+  border-radius: var(--radius-full);
+  transition: width 0.3s ease-out;
+}
+
+/* --- Pipeline Stages Tracker --- */
+.pipeline-stages-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 28px;
+  text-align: left;
+}
+
+.stage-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  border-radius: var(--radius-md);
+  background: var(--bg-main);
+  border: 1px solid var(--border-color);
+  transition: all var(--transition-normal);
+}
+
+.stage-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.stage-icon-status {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #EAEBF2;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  transition: all var(--transition-normal);
+}
+
+.stage-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.stage-status-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  background: #EAEBF2;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+/* State changes for stages */
+.stage-item.analyzing {
+  border-color: rgba(108, 92, 231, 0.3);
+  background: var(--primary-light);
+}
+
+.stage-item.analyzing .stage-icon-status {
+  background: var(--primary);
+  color: #FFFFFF;
+  animation: pulse-ring 1.4s infinite;
+}
+
+.stage-item.analyzing .stage-status-badge {
+  background: #FFFFFF;
+  color: var(--primary);
+}
+
+.stage-item.completed {
+  border-color: rgba(32, 169, 108, 0.3);
+  background: #FAFFFC;
+}
+
+.stage-item.completed .stage-icon-status {
+  background: var(--success);
+  color: #FFFFFF;
+}
+
+.stage-item.completed .stage-status-badge {
+  background: var(--success-bg);
+  color: var(--success);
+}

@@ -1,0 +1,117 @@
+/* ==========================================================================
+   MINDSENSE — AUTHENTICATION STYLESHEET (auth.css)
+   ========================================================================== */
+
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: radial-gradient(circle at 10% 20%, rgba(108, 92, 231, 0.05) 0%, rgba(247, 247, 251, 1) 90%);
+}
+
+.auth-header {
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(234, 235, 242, 0.6);
+}
+
+.auth-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 480px;
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 20px 50px rgba(32, 35, 53, 0.08);
+  padding: 40px;
+  position: relative;
+}
+
+.auth-title-block {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.auth-title-block h2 {
+  font-size: 1.75rem;
+  margin-bottom: 6px;
+  color: var(--dark);
+}
+
+.auth-title-block p {
+  color: var(--text-muted);
+  font-size: 0.925rem;
+}
+
+.demo-fill-banner {
+  background: var(--primary-light);
+  border: 1px dashed rgba(108, 92, 231, 0.4);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.demo-fill-text {
+  font-size: 0.8rem;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.auth-footer-links {
+  text-align: center;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-color);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.auth-footer-links a {
+  font-weight: 600;
+}
+
+.password-toggle-btn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  padding: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.password-toggle-btn:hover {
+  color: var(--dark);
+}
+
+.auth-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  font-size: 0.88rem;
+}
+
+.auth-legal-text {
+  font-size: 0.78rem;
+  color: var(--text-light);
+  text-align: center;
+  margin-top: 18px;
+  line-height: 1.4;
+}
+
+@media (max-width: 520px) {
+  .auth-card {
+    padding: 28px 20px;
+  }
+}

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Setup — MindSense AI Wellness</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/onboarding.css">
+</head>
+<body class="onboarding-page">
+
+  <!-- Header -->
+  <header style="padding: 20px 0; border-bottom: 1px solid var(--border-color); background: #FFF;">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 4.44-2.04z"></path>
+            <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-4.44-2.04z"></path>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">MindSense</span>
+          <span class="brand-badge">Onboarding</span>
+        </div>
+      </a>
+      <span class="badge badge-primary">Step 1 of 2</span>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="onboarding-container">
+    <!-- Stepper indicator -->
+    <div class="onboarding-progress-bar">
+      <div class="progress-step active">
+        <div class="step-circle">1</div>
+        <span>Profile & IoT</span>
+      </div>
+      <div class="step-divider"></div>
+      <div class="progress-step">
+        <div class="step-circle">2</div>
+        <span>Privacy & Consent</span>
+      </div>
+    </div>
+
+    <div class="onboarding-card">
+      <div class="onboarding-header">
+        <h2>Let's personalize your experience.</h2>
+        <p>Your profile data helps tailor wellness baselines and schedule unobtrusive daily check-ins.</p>
+      </div>
+
+      <form id="profile-setup-form">
+        <!-- Grid for inputs -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+          <!-- Display Name -->
+          <div class="form-group" style="grid-column: 1 / -1;">
+            <label for="profile-name" class="form-label">Display Name</label>
+            <div class="input-icon-wrapper">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <input type="text" id="profile-name" class="form-control" placeholder="e.g. Sarthak Kendre" value="Sarthak Kendre" required>
+            </div>
+          </div>
+
+          <!-- Age -->
+          <div class="form-group">
+            <label for="profile-age" class="form-label">Age</label>
+            <input type="number" id="profile-age" class="form-control" placeholder="e.g. 23" min="15" max="100" value="23" required>
+          </div>
+
+          <!-- Gender (Optional) -->
+          <div class="form-group">
+            <label for="profile-gender" class="form-label">Gender <span style="font-weight: 400; color: var(--text-muted);">(Optional)</span></label>
+            <select id="profile-gender" class="form-control">
+              <option value="Male" selected>Male</option>
+              <option value="Female">Female</option>
+              <option value="Non-Binary">Non-Binary</option>
+              <option value="Prefer not to say">Prefer not to say</option>
+            </select>
+          </div>
+
+          <!-- Daily Reminder Preference -->
+          <div class="form-group" style="grid-column: 1 / -1;">
+            <label for="profile-reminder" class="form-label">Daily Check-in Reminder Preference</label>
+            <select id="profile-reminder" class="form-control">
+              <option value="09:00">Morning Check-in (09:00 AM)</option>
+              <option value="14:00">Mid-day Reflection (02:00 PM)</option>
+              <option value="20:00" selected>Evening Retrospective (08:00 PM - Recommended)</option>
+              <option value="none">No reminder (Manual only)</option>
+            </select>
+            <span class="form-hint">A gentle notification prompts for your audio, visual, and text assessment.</span>
+          </div>
+        </div>
+
+        <!-- ==================== IOT SECTION ==================== -->
+        <div class="iot-pairing-box">
+          <div class="iot-pairing-header">
+            <div class="iot-pairing-info">
+              <div class="iot-icon-box">
+                <!-- Microcontroller / Chip Icon -->
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+                  <rect x="9" y="9" width="6" height="6"></rect>
+                  <line x1="9" y1="1" x2="9" y2="4"></line>
+                  <line x1="15" y1="1" x2="15" y2="4"></line>
+                  <line x1="9" y1="20" x2="9" y2="23"></line>
+                  <line x1="15" y1="20" x2="15" y2="23"></line>
+                  <line x1="20" y1="9" x2="23" y2="9"></line>
+                  <line x1="20" y1="14" x2="23" y2="14"></line>
+                  <line x1="1" y1="9" x2="4" y2="9"></line>
+                  <line x1="1" y1="14" x2="4" y2="14"></line>
+                </svg>
+              </div>
+              <div class="iot-device-details">
+                <h4>Connect your IoT Device</h4>
+                <p id="iot-subtext">MindSense ESP32 Biosensor Node (BLE 5.0)</p>
+              </div>
+            </div>
+
+            <!-- Connection Status Badge -->
+            <div id="iot-status-badge" class="iot-status-indicator iot-status-connected">
+              <span class="pulse-dot"></span>
+              <span id="iot-status-label">Connected</span>
+            </div>
+          </div>
+
+          <!-- Simulated Telemetry Preview -->
+          <div class="iot-telemetry-preview">
+            <div class="telemetry-mini-stat">
+              <div class="telemetry-mini-label">Heart Rate</div>
+              <div class="telemetry-mini-val" id="mini-stat-hr">78 BPM</div>
+            </div>
+            <div class="telemetry-mini-stat">
+              <div class="telemetry-mini-label">Skin Temp</div>
+              <div class="telemetry-mini-val" id="mini-stat-temp">36.7 °C</div>
+            </div>
+            <div class="telemetry-mini-stat">
+              <div class="telemetry-mini-label">Activity</div>
+              <div class="telemetry-mini-val" id="mini-stat-act">Moderate</div>
+            </div>
+            <div class="telemetry-mini-stat">
+              <div class="telemetry-mini-label">Sleep</div>
+              <div class="telemetry-mini-val" id="mini-stat-sleep">6h 42m</div>
+            </div>
+          </div>
+
+          <!-- Connection Toggle Button -->
+          <div style="display: flex; justify-content: flex-end; margin-top: 8px;">
+            <button type="button" id="toggle-iot-btn" class="btn btn-secondary btn-sm">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+              Reconnect Device
+            </button>
+          </div>
+        </div>
+
+        <!-- Academic Disclaimer Warning -->
+        <div class="academic-disclaimer" style="margin: 20px 0;">
+          <svg class="academic-disclaimer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+          </svg>
+          <div class="academic-disclaimer-content">
+            <h5>Research Privacy Notice</h5>
+            <p>Biosensor telemetry is anonymized and used strictly for academic wellness screening estimation.</p>
+          </div>
+        </div>
+
+        <!-- Continue Button -->
+        <button type="submit" class="btn btn-primary btn-block btn-lg" style="margin-top: 16px;">
+          Continue to Privacy
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </form>
+    </div>
+  </main>
+
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Pre-fill existing profile if available
+      const storedProfile = MindSenseState.get(STORAGE_KEYS.PROFILE);
+      const storedUser = MindSenseState.get(STORAGE_KEYS.USER);
+
+      if (storedProfile) {
+        if (storedProfile.displayName) document.getElementById('profile-name').value = storedProfile.displayName;
+        if (storedProfile.age) document.getElementById('profile-age').value = storedProfile.age;
+        if (storedProfile.gender) document.getElementById('profile-gender').value = storedProfile.gender;
+        if (storedProfile.dailyReminder) document.getElementById('profile-reminder').value = storedProfile.dailyReminder;
+      } else if (storedUser && storedUser.fullName) {
+        document.getElementById('profile-name').value = storedUser.fullName;
+      }
+
+      // IoT Simulation button
+      const toggleIotBtn = document.getElementById('toggle-iot-btn');
+      const iotBadge = document.getElementById('iot-status-badge');
+      const iotLabel = document.getElementById('iot-status-label');
+      let isConnected = true;
+
+      toggleIotBtn.addEventListener('click', () => {
+        isConnected = !isConnected;
+        if (isConnected) {
+          iotBadge.className = 'iot-status-indicator iot-status-connected';
+          iotLabel.textContent = 'Connected';
+          toggleIotBtn.innerHTML = `
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+            Reconnect Device
+          `;
+          MindSenseToast.show('ESP32 Biosensor Node paired successfully via Bluetooth BLE', 'success');
+        } else {
+          iotBadge.className = 'iot-status-indicator iot-status-disconnected';
+          iotLabel.textContent = 'Disconnected';
+          toggleIotBtn.innerHTML = `
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/></svg>
+            Connect Device
+          `;
+          MindSenseToast.show('ESP32 Node disconnected', 'warning');
+        }
+
+        // Save IoT state
+        const iot = MindSenseState.get(STORAGE_KEYS.IOT) || {};
+        iot.connected = isConnected;
+        MindSenseState.set(STORAGE_KEYS.IOT, iot);
+      });
+
+      // Submit Form
+      const form = document.getElementById('profile-setup-form');
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const profileData = {
+          displayName: document.getElementById('profile-name').value.trim() || 'Sarthak Kendre',
+          age: parseInt(document.getElementById('profile-age').value) || 23,
+          gender: document.getElementById('profile-gender').value,
+          dailyReminder: document.getElementById('profile-reminder').value,
+          iotConnected: isConnected,
+          updatedAt: new Date().toISOString()
+        };
+
+        MindSenseState.set(STORAGE_KEYS.PROFILE, profileData);
+        MindSenseToast.show('Profile preferences saved!', 'success');
+
+        setTimeout(() => {
+          window.location.href = 'consent.html';
+        }, 500);
+      });
+    });
+  </script>
+</body>
+</html>

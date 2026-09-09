@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Initial Assessment — MindSense AI Wellness</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/assessment.css">
+</head>
+<body>
+
+  <!-- Top Navbar -->
+  <header style="padding: 16px 0; border-bottom: 1px solid var(--border-color); background: #FFF; position: sticky; top:0; z-index: 100;">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 4.44-2.04z"></path>
+            <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-4.44-2.04z"></path>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">MindSense</span>
+          <span class="brand-badge">Multimodal Check-In</span>
+        </div>
+      </a>
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <span class="badge badge-success">
+          <span class="pulse-dot"></span> ESP32 Connected
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Assessment Content -->
+  <main class="container" style="padding-top: 40px;">
+    <div class="assessment-header">
+      <span class="badge badge-primary" style="margin-bottom: 12px;">Multimodal Data Intake</span>
+      <h1>Let's Understand Your Current State.</h1>
+      <p>
+        Provide your reflections through each of the four modality channels below. These signals will be processed by our multimodal fusion pipeline.
+      </p>
+    </div>
+
+    <!-- 4 Input Cards Grid -->
+    <div class="assessment-grid">
+
+      <!-- ==================== CARD 1: TEXT ==================== -->
+      <div class="assessment-card">
+        <div>
+          <div class="assessment-card-top">
+            <div class="assessment-card-title-group">
+              <div class="assessment-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              </div>
+              <div>
+                <h3>Text Check-in</h3>
+                <p>Semantic & Sentiment Reflection</p>
+              </div>
+            </div>
+            <span id="text-status-badge" class="badge badge-warning">Awaiting Input</span>
+          </div>
+
+          <div style="margin-top: 18px;">
+            <label for="text-checkin-input" style="font-size: 0.95rem; font-weight: 600; color: var(--dark); display: block; margin-bottom: 8px;">
+              How have you been feeling recently?
+            </label>
+            <textarea id="text-checkin-input" class="text-input-area" placeholder="Write a few sentences about how you have been feeling..."></textarea>
+          </div>
+        </div>
+
+        <div>
+          <div class="text-meta-row">
+            <span id="text-word-count">0 words</span>
+            <button type="button" id="insert-sample-text-btn" class="btn btn-secondary btn-sm" style="padding: 4px 10px; font-size: 0.75rem;">
+              Fill Sample Reflection
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== CARD 2: AUDIO ==================== -->
+      <div class="assessment-card">
+        <div>
+          <div class="assessment-card-top">
+            <div class="assessment-card-title-group">
+              <div class="assessment-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+              </div>
+              <div>
+                <h3>Voice Sample</h3>
+                <p>Record a short response about your day.</p>
+              </div>
+            </div>
+            <span id="audio-status-badge" class="badge badge-warning">Waiting</span>
+          </div>
+
+          <div style="margin-top: 18px;">
+            <!-- Waveform Box -->
+            <div class="waveform-box">
+              <canvas id="audio-waveform-canvas"></canvas>
+              <div class="audio-controls-row">
+                <div class="recording-timer">
+                  <span id="recording-dot" class="recording-dot"></span>
+                  <span id="audio-timer">00:00 / 00:15</span>
+                </div>
+                <div class="audio-action-buttons">
+                  <button type="button" id="audio-start-btn" class="btn btn-primary btn-sm">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                    Start Recording
+                  </button>
+                  <button type="button" id="audio-stop-btn" class="btn btn-danger btn-sm" style="display: none;">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="6" width="12" height="12"/></svg>
+                    Stop Recording
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="form-hint" style="margin-top: 8px;">
+          Acoustic features such as pitch variation, speech rhythm, and vocal energy will be examined.
+        </p>
+      </div>
+
+      <!-- ==================== CARD 3: IMAGE / VIDEO ==================== -->
+      <div class="assessment-card">
+        <div>
+          <div class="assessment-card-top">
+            <div class="assessment-card-title-group">
+              <div class="assessment-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+              </div>
+              <div>
+                <h3>Visual Sample</h3>
+                <p>Upload an image or short video for visual analysis.</p>
+              </div>
+            </div>
+            <span id="visual-status-badge" class="badge badge-warning">Optional / Ready</span>
+          </div>
+
+          <div style="margin-top: 18px;">
+            <!-- Upload Dropzone -->
+            <div id="visual-dropzone" class="visual-upload-dropzone">
+              <input type="file" id="visual-file-input" accept="image/*,video/*" style="display: none;">
+
+              <div id="visual-dropzone-content" class="visual-dropzone-content">
+                <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.8" style="color: var(--primary);">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="17 8 12 3 7 8"></polyline>
+                  <line x1="12" y1="3" x2="12" y2="15"></line>
+                </svg>
+                <span style="font-size: 0.9rem; font-weight: 600; color: var(--dark);">Choose Image / Video</span>
+                <span style="font-size: 0.78rem; color: var(--text-muted);">or drag and drop sample file here (JPG, PNG, MP4)</span>
+              </div>
+
+              <!-- Media Preview Area -->
+              <div id="visual-preview-container" class="visual-preview-container">
+                <img id="visual-preview-img" alt="Visual Preview" style="display: none;">
+                <video id="visual-preview-video" controls style="display: none;"></video>
+                <button type="button" id="visual-remove-btn" class="remove-media-btn" title="Remove media">✕</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="form-hint" style="margin-top: 8px;">
+          Evaluates affective valence and facial dynamics.
+        </p>
+      </div>
+
+      <!-- ==================== CARD 4: IOT SIGNALS ==================== -->
+      <div class="assessment-card">
+        <div>
+          <div class="assessment-card-top">
+            <div class="assessment-card-title-group">
+              <div class="assessment-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+              </div>
+              <div>
+                <h3>IoT Signals</h3>
+                <p>Simulated real-time sensor telemetry</p>
+              </div>
+            </div>
+            <span class="badge badge-success">
+              <span class="pulse-dot"></span> Device Connected
+            </span>
+          </div>
+
+          <!-- 4 Sensor Readout Tiles -->
+          <div class="iot-telemetry-grid" style="margin-top: 18px;">
+            <!-- Heart Rate -->
+            <div class="iot-metric-tile">
+              <div class="iot-metric-icon heart">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+              </div>
+              <div class="iot-metric-meta">
+                <span class="iot-metric-label">Heart Rate</span>
+                <span id="iot-live-hr" class="iot-metric-value">78 BPM</span>
+              </div>
+            </div>
+
+            <!-- Skin Temperature -->
+            <div class="iot-metric-tile">
+              <div class="iot-metric-icon temp">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/></svg>
+              </div>
+              <div class="iot-metric-meta">
+                <span class="iot-metric-label">Temperature</span>
+                <span id="iot-live-temp" class="iot-metric-value">36.7 °C</span>
+              </div>
+            </div>
+
+            <!-- Physical Activity -->
+            <div class="iot-metric-tile">
+              <div class="iot-metric-icon activity">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              </div>
+              <div class="iot-metric-meta">
+                <span class="iot-metric-label">Activity</span>
+                <span id="iot-live-activity" class="iot-metric-value">Moderate</span>
+              </div>
+            </div>
+
+            <!-- Sleep Duration -->
+            <div class="iot-metric-tile">
+              <div class="iot-metric-icon sleep">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+              </div>
+              <div class="iot-metric-meta">
+                <span class="iot-metric-label">Sleep</span>
+                <span id="iot-live-sleep" class="iot-metric-value">6h 42m</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="form-hint" style="margin-top: 8px;">
+          Transmitted from MindSense ESP32 Biosensor Node via BLE.
+        </p>
+      </div>
+    </div>
+
+    <!-- Submit & Analyze Bottom Action -->
+    <div class="assessment-footer-action">
+      <button type="button" id="submit-assessment-btn" class="btn btn-primary btn-lg" style="padding: 16px 48px; font-size: 1.1rem;">
+        Submit & Analyze
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+
+      <p class="assessment-disclaimer-note">
+        This assessment calculates experimental screening indicators and does not constitute a clinical depression diagnosis.
+      </p>
+    </div>
+  </main>
+
+  <script src="js/app.js"></script>
+  <script src="js/assessment.js"></script>
+</body>
+</html>

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MindSense — IoT-Based Depression Monitoring & Mental Wellness Screening</title>
+  <!-- Global Design System & Landing Page Styles -->
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/landing.css">
+</head>
+<body>
+
+  <!-- ==================== TOP NAVIGATION ==================== -->
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo" aria-label="MindSense Home">
+        <div class="brand-icon-box">
+          <!-- Brain / Neural Network Icon -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 4.44-2.04z"></path>
+            <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-4.44-2.04z"></path>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">MindSense</span>
+          <span class="brand-badge">AI Wellness</span>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#about">About Project</a></li>
+        </ul>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-secondary btn-sm">Login</a>
+        <a href="register.html" class="btn btn-primary btn-sm">Get Started</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <main>
+    <section class="hero-section">
+      <div class="container hero-grid">
+        <!-- Left Hero Content -->
+        <div class="hero-content">
+          <div class="hero-pill">
+            <span class="pulse-dot" style="color: var(--primary);"></span>
+            Academic AI & IoT Research Platform
+          </div>
+
+          <h1 class="hero-title">
+            Understand Your <span class="text-gradient">Wellness</span> Better.
+          </h1>
+
+          <p class="hero-description">
+            MindSense combines multimodal Artificial Intelligence analysis with IoT biosensor monitoring to help users identify wellness-related patterns and screening indicators early.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="register.html" class="btn btn-primary btn-lg">
+              Start Your Journey
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="login.html" class="btn btn-secondary btn-lg">
+              I already have an account
+            </a>
+          </div>
+
+          <div class="hero-trust-row">
+            <div class="trust-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Multimodal Fusion
+            </div>
+            <div class="trust-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Privacy Preserving
+            </div>
+            <div class="trust-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Continuous IoT Feed
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Hero Interactive Dashboard Mockup Preview -->
+        <div class="hero-mockup-wrapper">
+          <div class="hero-dashboard-mockup">
+            <div class="mockup-header">
+              <div class="mockup-title-area">
+                <div class="user-avatar-circle" style="width: 28px; height: 28px; font-size: 0.75rem;">MS</div>
+                <h4>MindSense AI Telemetry</h4>
+              </div>
+              <span class="mockup-live-indicator">
+                <span class="pulse-dot"></span> Live Monitoring
+              </span>
+            </div>
+
+            <!-- Mini Stat Widgets -->
+            <div class="mockup-grid">
+              <!-- Widget 1: Risk Estimate -->
+              <div class="mockup-widget">
+                <span class="mockup-widget-label">Overall Risk Estimate</span>
+                <span class="mockup-widget-val" style="color: var(--warning);">56 <span style="font-size: 0.9rem; font-weight: 500; color: var(--text-muted);">/ 100</span></span>
+                <span class="mockup-widget-status" style="color: var(--warning);">
+                  ● Moderate Pattern
+                </span>
+              </div>
+
+              <!-- Widget 2: AI Analysis -->
+              <div class="mockup-widget">
+                <span class="mockup-widget-label">AI Analysis</span>
+                <span class="mockup-widget-val text-gradient">Active</span>
+                <span class="mockup-widget-status" style="color: var(--primary);">
+                  4 Modalities Synced
+                </span>
+              </div>
+            </div>
+
+            <!-- Mini Wellness Trend Curve -->
+            <div class="mockup-trend-box">
+              <div class="mockup-trend-header">
+                <span style="font-size: 0.8rem; font-weight: 700; color: var(--dark);">Wellness Trend (7-Day)</span>
+                <span class="badge badge-primary">Steady</span>
+              </div>
+              <svg class="mockup-sparkline" viewBox="0 0 280 60" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="heroGradient" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#6C5CE7" stop-opacity="0.3" />
+                    <stop offset="100%" stop-color="#6C5CE7" stop-opacity="0.0" />
+                  </linearGradient>
+                </defs>
+                <path d="M 0,38 Q 45,20 90,30 T 180,24 T 280,32 L 280,60 L 0,60 Z" fill="url(#heroGradient)"></path>
+                <path d="M 0,38 Q 45,20 90,30 T 180,24 T 280,32" fill="none" stroke="#6C5CE7" stroke-width="3" stroke-linecap="round"></path>
+              </svg>
+            </div>
+
+            <!-- Connected IoT Device Pill -->
+            <div class="mockup-device-badge">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--success);"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/></svg>
+                <span>ESP32 Biosensor Node</span>
+              </div>
+              <span class="badge badge-success">Connected</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FEATURES SECTION ==================== -->
+    <section id="features" class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Multimodal Architecture</span>
+          <h2 class="section-title">Holistic Wellness Monitoring</h2>
+          <p class="section-subtitle">
+            Depression and wellness changes manifest across multiple channels. MindSense captures complementary signals to provide a nuanced longitudinal screening picture.
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <!-- Feature 1: Multimodal AI -->
+          <div class="card card-hoverable feature-card">
+            <div class="feature-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+            </div>
+            <h4>Multimodal AI Fusion</h4>
+            <p>Combines linguistic semantics, vocal prosody, visual affect, and physiological sensor metrics using cross-modal representation fusion.</p>
+            <div class="feature-pill-list">
+              <span class="feature-subpill">Cross-Attention</span>
+              <span class="feature-subpill">Feature Synthesis</span>
+            </div>
+          </div>
+
+          <!-- Feature 2: Audio Analysis -->
+          <div class="card card-hoverable feature-card">
+            <div class="feature-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+            </div>
+            <h4>Audio Acoustic Analysis</h4>
+            <p>Extracts pitch modulation, speech rate, vocal energy, and acoustic prosody indicators associated with psychomotor slowing and fatigue.</p>
+            <div class="feature-pill-list">
+              <span class="feature-subpill">Prosodic Energy</span>
+              <span class="feature-subpill">MFCC Features</span>
+            </div>
+          </div>
+
+          <!-- Feature 3: Visual Analysis -->
+          <div class="card card-hoverable feature-card">
+            <div class="feature-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            </div>
+            <h4>Visual Valence Analysis</h4>
+            <p>Observes facial affect dynamics and micro-expressions over brief user check-ins to monitor emotional valence and expressive flattening.</p>
+            <div class="feature-pill-list">
+              <span class="feature-subpill">Action Units</span>
+              <span class="feature-subpill">Affective Valence</span>
+            </div>
+          </div>
+
+          <!-- Feature 4: IoT Monitoring -->
+          <div class="card card-hoverable feature-card">
+            <div class="feature-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <h4>IoT Biosensor Monitoring</h4>
+            <p>Continuous passive telemetry from ESP32 biosensors: heart rate variability (HRV), peripheral temperature, physical activity, and sleep rhythms.</p>
+            <div class="feature-pill-list">
+              <span class="feature-subpill">ESP32 Telemetry</span>
+              <span class="feature-subpill">Autonomic Rhythms</span>
+            </div>
+          </div>
+
+          <!-- Feature 5: Progress Tracking -->
+          <div class="card card-hoverable feature-card">
+            <div class="feature-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            </div>
+            <h4>Longitudinal Progress Tracking</h4>
+            <p>Dynamic 7-day and 30-day interactive SVG charts tracking wellness fluctuation over time rather than relying on one-off snapshots.</p>
+            <div class="feature-pill-list">
+              <span class="feature-subpill">Trend Mapping</span>
+              <span class="feature-subpill">Variance Curves</span>
+            </div>
+          </div>
+
+          <!-- Feature 6: AI Insights -->
+          <div class="card card-hoverable feature-card">
+            <div class="feature-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <h4>AI Wellness Insights</h4>
+            <p>Actionable, ethically scoped observations highlighting lifestyle patterns and encouraging timely discussions with qualified professionals.</p>
+            <div class="feature-pill-list">
+              <span class="feature-subpill">Screening Guidance</span>
+              <span class="feature-subpill">Contextual Context</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== HOW IT WORKS SECTION ==================== -->
+    <section id="how-it-works" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">System Workflow</span>
+          <h2 class="section-title">How MindSense Operates</h2>
+          <p class="section-subtitle">
+            A seamless four-step pipeline transitioning from personal setup to continuous multimodal screening.
+          </p>
+        </div>
+
+        <div class="steps-grid">
+          <!-- Step 1 -->
+          <div class="card step-card">
+            <span class="step-number">01</span>
+            <h4>Create Account</h4>
+            <p>Register securely with email and personal credentials to establish your protected wellness profile.</p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="card step-card">
+            <span class="step-number">02</span>
+            <h4>Profile & Consent</h4>
+            <p>Configure reminder schedules, pair your ESP32 biosensor node, and review ethical data privacy policies.</p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="card step-card">
+            <span class="step-number">03</span>
+            <h4>Initial Assessment</h4>
+            <p>Provide a brief text reflection, short voice sample, facial video, and synchronize live IoT vital telemetry.</p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="card step-card">
+            <span class="step-number">04</span>
+            <h4>AI Analysis & Dashboard</h4>
+            <p>The multimodal pipeline extracts correlated wellness estimates and visualizes your longitudinal trend.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ABOUT PROJECT SECTION ==================== -->
+    <section id="about" class="section section-alt">
+      <div class="container">
+        <div class="about-box">
+          <div class="about-content">
+            <span class="section-tag">Academic Research Project</span>
+            <h3>Engineering Technology for Mental Wellness Screening</h3>
+            <p>
+              MindSense is an academic research demonstration developed by engineering students to explore the intersection of Web Engineering, Machine Learning, and Internet of Things (IoT) hardware.
+            </p>
+            <p>
+              By fusing unobtrusive wearable IoT signals with self-reported text reflections and voice acoustics, the system demonstrates how pervasive computing can assist in monitoring wellness-related trends.
+            </p>
+
+            <!-- Prominent Academic & Medical Disclaimer -->
+            <div class="academic-disclaimer">
+              <svg class="academic-disclaimer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+              </svg>
+              <div class="academic-disclaimer-content">
+                <h5>Ethical & Medical Scope Notice</h5>
+                <p>
+                  This system provides screening and monitoring estimates and is not a medical diagnosis or replacement for professional healthcare. Always consult licensed medical practitioners for diagnostic evaluations.
+                </p>
+              </div>
+            </div>
+
+            <div style="margin-top: 24px;">
+              <a href="register.html" class="btn btn-primary">
+                Experience Demo System
+              </a>
+            </div>
+          </div>
+
+          <!-- Project Specifications Sidebar -->
+          <div class="about-specs-card">
+            <h4 style="color: var(--dark); margin-bottom: 8px;">Technical Architecture</h4>
+            <div class="spec-item">
+              <span class="spec-label">Project Domain</span>
+              <span class="spec-value">IoT & Healthcare AI</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">IoT Sensor Node</span>
+              <span class="spec-value">ESP32 BLE / Wi-Fi</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Modalities</span>
+              <span class="spec-value">Text + Audio + Vision + IoT</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Backend Target</span>
+              <span class="spec-value">Python / FastAPI / PyTorch</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Frontend Stack</span>
+              <span class="spec-value">HTML5 / CSS3 / Vanilla JS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" style="color:#FFF;">
+            <div class="brand-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 4.44-2.04z"></path>
+                <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-4.44-2.04z"></path>
+              </svg>
+            </div>
+            <span class="brand-name">MindSense</span>
+          </a>
+          <p>AI-Based Mental Wellness Monitoring System combining multimodal deep learning and IoT sensor telemetry for longitudinal screening.</p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Platform Flow</h5>
+          <ul class="footer-links">
+            <li><a href="register.html">01 — Registration</a></li>
+            <li><a href="login.html">02 — Login Authentication</a></li>
+            <li><a href="profile.html">03 — Profile & ESP32 Pairing</a></li>
+            <li><a href="consent.html">04 — Privacy & Consent</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Analysis & Dashboard</h5>
+          <ul class="footer-links">
+            <li><a href="assessment.html">Initial Assessment</a></li>
+            <li><a href="analysis.html">AI Multimodal Pipeline</a></li>
+            <li><a href="dashboard.html">Wellness Dashboard</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 MindSense Academic Project. All rights reserved.</span>
+        <span>Screening & Monitoring Prototype • Not for Medical Diagnosis</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Core App Scripts -->
+  <script src="js/app.js"></script>
+</body>
+</html>
