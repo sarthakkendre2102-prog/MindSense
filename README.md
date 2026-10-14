@@ -95,6 +95,16 @@ MindSense Dashboard (JSON payload response)
 
 ---
 
+## 🧠 Local facial-expression screening backend
+
+The repository now includes a separate Python API under [backend/README.md](backend/README.md). It provides FastAPI endpoints for a single image and image sequences, MediaPipe/OpenCV face detection, FER2013 MobileNetV2 training (with a custom CNN option), and evaluation artifacts. The training loader supports the linked [msambare/fer2013 Kaggle dataset](https://www.kaggle.com/datasets/msambare/fer2013) using its `train/` and `test/` image folders. Install and run from the `backend/` directory; download the dataset into `backend/data/` and train a model before inference is available.
+
+The frontend remains unchanged and is still a static HTML/CSS/vanilla-JavaScript app. Its existing `MindSenseAPI` hook in `js/app.js` targets a future `/api/v1/assessment/predict` route and currently returns simulated data; it is not wired to these image-only endpoints. The assessment visual picker in `assessment.html` accepts one image or video, while the new API expects `file` for `/api/analyze-image` or repeated `files` image fields for `/api/analyze-sequence`. Follow the backend README to connect the selected image without changing the existing UI.
+
+For local development, serve the frontend over HTTP (for example, `python -m http.server 5500` from the repository root) and configure the matching origin in `backend/.env`. The backend CORS defaults already allow localhost ports 5500 and 5501. The facial-expression score is a heuristic screening indicator, not a depression or other medical diagnosis.
+
+---
+
 ## ⚖️ Ethical & Academic Compliance
 
 This system explicitly restricts its terminology to:
